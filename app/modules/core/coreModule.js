@@ -1,14 +1,21 @@
 define(['modules/core/runners/logRunner'], function(logRunner) {
   /**
    *  Module
-   * 入口
+   * main
    * Description
    */
-  var coreModule = angular.module('coreModule', ['themeModule']).config(function($interpolateProvider) {
-    $interpolateProvider.startSymbol('[[').endSymbol(']]'); //更改插值表达式{{}}
+  var coreModule = angular.module('coreModule', ['ngRoute', 'themeModule']).
+  config(function($interpolateProvider, $routeProvider) {
+    $interpolateProvider.startSymbol('[[').endSymbol(']]'); //change{{}}
+    $routeProvider.when('/',{
+      templateURL:'/app/modules/core/view/home.html',
+      controller:'homeController'
+    });
+    //$routeProvider.otherwise({redirectTo: '/index'});
+
   });
 
-  coreModule.run(logRunner); //统一提示方法
+  coreModule.run(logRunner); //log
 
   require(['modules/core/controllerReferences'], function(
     references) {

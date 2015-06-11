@@ -1,7 +1,12 @@
-//测试主入口控制器
-define(function() {
-  var coreModule = angular.module('coreModule');
-  coreModule.controller('mainController', ['$scope', function($scope) {
-    $scope.title = 'someone';
+define(function () {
+  /**
+  * Module
+  *
+  * Description
+  */
+  angular.
+  module('coreModule').
+  controller('homeController', ['$scope', function($scope){
+    $scope.title='home';
   }]);
 });

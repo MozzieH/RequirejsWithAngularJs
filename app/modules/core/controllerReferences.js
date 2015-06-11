@@ -1,6 +1,7 @@
-//所有需加载的Controller接口类
+//allControllersLoad
 define(function() {
   return [
+    'modules/core/controllers/mainController',
     'modules/core/controllers/homeController'
   ];
 });
